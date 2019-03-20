@@ -137,12 +137,14 @@ body {
 }
 h1 {
   font-size: 3.2rem;
+  padding: 20px 0 15px 0;
 }
 h2,
 h3,
 h4,
 h5 {
   font-size: 2.3rem;
+  padding-bottom: 10px;
 }
 p {
   font-size: 1.7rem;
@@ -155,6 +157,7 @@ p {
 img {
   height: 200px;
   width: 200px;
+  padding: 10px 0 0 20px;
 }
 /* header */
 header nav {
@@ -165,47 +168,94 @@ header nav {
   height: 100%;
   margin-bottom: 3.13%;
 }
-@media (max-width: 800px) {
-  header {
-    align-items: center;
-  }
-  header nav {
-    display: flex;
-    justify-content: flex-end;
-    width: 70%;
-  }
-}
 header nav a {
   color: gray;
   text-decoration: none;
-  margin: 0 8%;
+  margin: 0 3.5rem;
+}
+@media (max-width: 800px) {
+  header {
+    align-items: flex-end;
+  }
+}
+@media (max-width: 500px) {
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (max-width: 800px) {
+  header nav {
+    display: flex;
+    justify-content: flex-end;
+    width: 90%;
+  }
+}
+@media (max-width: 500px) {
+  header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  nav a {
+    margin: 0 1rem;
+  }
 }
 /* header */
 /* top-content */
 section.top-content {
   border: 1px solid crimson;
+  background-color: #f2f2f2;
 }
-/* middle content */
+section.top-content p {
+  padding-bottom: 28px;
+}
+/* top-content */
+/* middle-content */
 section.middle-content {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   padding-bottom: 30px;
 }
-div.skills-box {
+section.middle-content div.skills-box {
   width: 90%;
   margin: 20px;
   padding-bottom: 20px;
   border-bottom: 1px dashed black;
 }
-div.skills-box h2 {
+section.middle-content div.skills-box h2 {
   padding-top: 10px;
 }
 div.skills-box table,
-div.skills-box td {
+div.skills-box td,
+div.work-history-box table,
+div.work-history-box td {
   border: 1px solid dodgerblue;
   border-collapse: collapse;
   padding: 15px;
   text-align: left;
   border-spacing: 5px;
+  background-color: #f2f2f2;
+}
+div.skills-box table th,
+div.skills-box td th,
+div.work-history-box table th,
+div.work-history-box td th {
+  text-align: center;
+  border: none;
+  font-weight: 700;
+}
+/* middle-content */
+/* contact */
+footer {
+  text-align: center;
+  margin-top: 4em;
+  color: black;
+  background-color: #f2f2f2;
+  border-radius: 10px;
 }
