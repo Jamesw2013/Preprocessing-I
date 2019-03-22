@@ -49,11 +49,143 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+
+@primary-color: crimson;
+@secondary-color: dodgerblue;
+@background-color: #f2f2f2;
+
+
+.flex-layout(@justify-content, @alignItems) {
+  display: flex;
+  justify-content: @justify-content;
+  align-items: @alignItems;
+}
 * {
     box-sizing: border-box;
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-size: 62.5%;
 }
 
+h1 {
+	font-size: 3.2rem;
+	padding: 20px 0 15px 0;
+}
+
+h2, h3, h4, h5 {
+	font-size: 2.3rem;
+	padding-bottom: 10px;
+}
+
+p {
+	font-size: 1.7rem;
+}
+
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+	font-size: 1.8rem;
+}
+
+img {
+	height: 200px;
+	width: 200px;
+	padding: 10px 0 0 20px;
+}
+
+/* header */
+	header nav {
+		display: flex;
+		align-items: flex-start;
+		flex-wrap: nowrap;
+		justify-content: flex-end;
+		height: 100%;
+		margin-bottom: 3.13%;
+		a {
+			color: gray;
+			text-decoration: none;
+			margin: 0 3.5rem;
+		}
+	}
+	header {
+		@media(max-width: 800px) {
+			align-items: flex-end;
+		}
+		@media(max-width : 500px) {
+			.flex-layout(center, center);
+		}
+	}
+
+	header nav {
+		@media(max-width: 800px) {
+			display: flex;
+			justify-content: flex-end;
+			width: 90%;
+		}
+		@media(max-width: 500px) {
+			.flex-layout(center, center);
+			width: 100%
+		}
+	}
+	
+	@media(max-width: 500px) {
+		nav a {
+			margin: 0 1rem;
+		}
+	}
+
+/* header */
+
+/* top-content */
+	section.top-content {
+		border: 1px solid @primary-color;
+		background-color: @background-color;
+		p {
+			padding-bottom: 28px;
+		}
+	}
+/* top-content */
+
+/* middle-content */
+	section.middle-content{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		padding-bottom: 30px;
+		div.skills-box {
+			width: 90%;
+			margin: 20px;
+			padding-bottom: 20px;
+			border-bottom: 1px dashed black;
+			h2 {
+				padding-top: 10px;
+			}
+		}
+	}
+
+	div.skills-box table, div.skills-box td, div.work-history-box table, div.work-history-box td{
+		border: 1px solid @secondary-color;
+		border-collapse: collapse;
+		padding: 15px;
+		text-align: left;
+		border-spacing: 5px;
+		background-color: @background-color;
+		th {
+			text-align: center;
+			border: none;
+			font-weight: 700;
+		}
+	}
+/* middle-content */
+.flex-layout-2 (@textAlign)
+	{text-align: @textAlign}
+/* contact */
+	footer {
+		.flex-layout-2(center);
+		margin-top: 4em;
+		color:black;
+		background-color: @background-color;
+		border-radius: 10px;
+	}
